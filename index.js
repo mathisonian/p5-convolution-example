@@ -31,20 +31,21 @@ const timeseriesData = [...Array(NUMBER_OF_POINTS)].map((d) => Math.random()) //
  * Sketch for the timeseries
  */
 const timeseriesSketch = ( p ) => {
+
+  let x1, x2, y1, y2, previousPoint;
   p.setup = function() {
     p.createCanvas(pageWidth, 300);
     p.background('#ddd');
     p.fill('#000000');
     timeseriesData.forEach((currentPoint, index) => {
       if (index === 0) return;
-      const previousPoint = timeseriesData[index - 1];
+      previousPoint = timeseriesData[index - 1];
 
-      const x1 = p.map(index - 1, 0, NUMBER_OF_POINTS, 0, pageWidth);
-      const x2 = p.map(index, 0, NUMBER_OF_POINTS, 0, pageWidth);
-      const y1 = p.map(previousPoint, 0, 1, 0, 300);
-      const y2 = p.map(currentPoint, 0, 1, 0, 300);
+      x1 = p.map(index - 1, 0, NUMBER_OF_POINTS, 0, pageWidth);
+      x2 = p.map(index, 0, NUMBER_OF_POINTS, 0, pageWidth);
+      y1 = p.map(previousPoint, 0, 1, 0, 300);
+      y2 = p.map(currentPoint, 0, 1, 0, 300);
 
-      console.log(x1, y1, x2, y2)
       p.line(x1, y1, x2, y2);
     })
   };
