@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"styles.f1c6ebff.css","sourceRoot":"..","sourcesContent":["* {\n  box-sizing: border-box;\n}\n\nbody, html {\n  padding: 0;\n  margin: 0;\n}"]}
